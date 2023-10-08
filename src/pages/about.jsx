@@ -114,7 +114,7 @@ function LeadershipSection() {
       <SectionExplain className="md:w-[60%] w-[90%] mx-auto">
         <SectionTag className="text-center text-xs md:text-base">OUR LEADERSHIP TEAM</SectionTag>
         <SectionHeading className="text-center text-2xl ">
-          Meet the great team behind Futurspace
+          Meet the great team behind Futurgramer
         </SectionHeading>
         <SectionDescription className="text-center text-xs md:text-base">
           Lorem ipsum dolor sit amet consectetur adipiscing elit sapien
@@ -162,9 +162,9 @@ function JoinTeamSection() {
             proin sollicitudin ultricies aliquet malesuada aliquet.
           </SectionDescription>
           <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="500" className="inline-flex gap-2 cursor-pointer group items-center text-xs md:text-base">
-              <p className="text-primary-default font-bold">Explore Jobs</p>
-              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5"/>
-            </div>
+            <p className="text-primary-default font-bold">Explore Jobs</p>
+            <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
+          </div>
         </SectionExplain>
       </div>
     </Section>

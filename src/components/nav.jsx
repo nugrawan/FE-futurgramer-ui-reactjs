@@ -11,18 +11,13 @@ function NavLogo({ blue }) {
       className="flex gap-2 items-center text-lg cursor-pointer animate-fade-down animate-once animate-duration-1000 animate-delay-300 animate-ease-out"
       onClick={() => navigate("/")}
     >
-      <img 
-        src={!blue ? "/logo-filled.svg" : "/logo-white.svg"}
-        alt="logo"
-        className="w-8"
-      />
       <h1
         className={rc(
-          "text-primary-default text-lg sm:text-2xl font-bold",
+          "text-white text-lg sm:text-2xl font-bold",
           blue && "text-white"
         )}
       >
-        FUTURSPACE
+        <span className={rc("text-4xl text-primary-default", blue && 'text-white')}>F</span>UTURGRAMER
       </h1>
     </div>
   );
@@ -32,14 +27,6 @@ const navItemList = [
   {
     name: "About",
     path: "/about",
-  },
-  {
-    name: "Pricing",
-    path: "/pricing",
-  },
-  {
-    name: "Offices",
-    path: "/offices",
   },
   {
     name: "Spaces",
@@ -56,16 +43,16 @@ function NavItems({ blue }) {
   return (
     <div className="lg:flex gap-8 items-center hidden animate-fade-down animate-once animate-duration-1000 animate-delay-300 animate-ease-out">
       {navItemList.map((item, i) => (
-          <div
-            key={i}
-            className={rc(
-              "opacity-80 hover:opacity-100 cursor-pointer",
-              blue && "text-white"
-            )}
-            onClick={() => navigate(item.path)}
-          >
-            {item.name}
-          </div>
+        <div
+          key={i}
+          className={rc(
+            "opacity-80 text-primary-default hover:opacity-100 cursor-pointer",
+            blue && "text-white"
+          )}
+          onClick={() => navigate(item.path)}
+        >
+          {item.name}
+        </div>
       ))}
       <Button variant={blue ? "secondary" : "default"}>Sign up</Button>
     </div>
@@ -83,7 +70,7 @@ function DrawerWithNavigation({ pathname }) {
       <IconButton
         variant="text"
         className={rc(
-          "ml-auto h-8 w-8 text-inherit hover:bg-gray-300 focus:bg-transparent active:bg-transparent lg:hidden"
+          "ml-auto h-8 w-8 focus:bg-transparent active:bg-transparent lg:hidden"
         )}
         ripple={false}
         onClick={openDrawer}
@@ -92,8 +79,8 @@ function DrawerWithNavigation({ pathname }) {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
-          fill={pathname === "/about" ? "white" : "black"}
-          stroke={pathname === "/about" ? "white" : "black"}
+          fill={pathname === "/about" ? "white" : "white"}
+          stroke={pathname === "/about" ? "white" : "white"}
           strokeWidth={2}
         >
           <path
@@ -103,10 +90,10 @@ function DrawerWithNavigation({ pathname }) {
           />
         </svg>
       </IconButton>
-      <Drawer open={open} onClose={closeDrawer}>
-        <div className="mb-2 flex items-center justify-between p-5 space-x-5">
+      <Drawer open={open} onClose={closeDrawer} className="bg-background-default">
+        <div className="mb-2 bg-background-default flex items-center justify-between p-5 space-x-5">
           <NavLogo />
-          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+          <IconButton variant="text" color="white" onClick={closeDrawer}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -126,7 +113,7 @@ function DrawerWithNavigation({ pathname }) {
         <List>
           {navItemList.map((item, i) => (
             <ListItem
-              className="opacity-80 hover:opacity-100 focus:font-semibold focus:opacity-100 cursor-pointer "
+              className="opacity-80 text-primary-default focus:font-semibold focus:opacity-100 cursor-pointer "
               key={i}
               onClick={() => navigate(item.path)}
             >
@@ -143,10 +130,10 @@ function Navbar() {
   const pathname = useLocation().pathname;
   const blue = pathname === "/about";
   return (
-    <div className={rc("w-full ", blue && "bg-primary-default")}>
+    <div className={rc("w-full border-b border-primary-default bg-background-default", blue && "bg-primary-default")}>
       <div
         className={rc(
-          "w-full flex justify-between items-center p-10 mx-auto px-6 cont"
+          "w-full flex justify-between items-center p-5 mx-auto px-6 cont"
         )}
       >
         <NavLogo blue={blue} />

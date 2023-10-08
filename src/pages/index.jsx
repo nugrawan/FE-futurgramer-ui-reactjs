@@ -1,5 +1,4 @@
 import React from "react";
-import { SwiperSlide } from "swiper/react";
 import { Button } from "../components/button";
 import {
   Section,
@@ -9,19 +8,17 @@ import {
   SectionExplain,
 } from "../components/section";
 import { Card, CardDesc, CardTitle } from "../components/card";
-import { SSwiper } from "../components/swiper";
-import { rc } from "../lib/utils";
 
 function HeroSection() {
   return (
-    <Section className="mt-4" row>
-      <SectionExplain className="flex flex-col gap-4 w-full">
+    <Section className="pt-20 gap-20" row>
+      <SectionExplain className="flex flex-col gap-3 w-5/6">
         <SectionHeading className="animate-fade-up animate-duration-[300ms] animate-delay-300 animate-ease-in">
-          The workspace that works for you & your team
+          Happy Life With Coding
         </SectionHeading>
-        <SectionDescription className="animate-fade-up animate-duration-[500ms] animate-delay-500 animate-ease-in">
-          A safe, comfortable, and hassle-free Coworking workspace increases
-          productivity. Ideal workspaces make life easier and more productive.
+        <SectionDescription className="animate-fade-up text-white animate-duration-[500ms] animate-delay-500 animate-ease-in">
+          Care about your mental health and your body, don't just coding and sit down in your room
+          We serve you our best services for your health and your happy life, enjoy our services and stay coding
         </SectionDescription>
 
         <div className="flex gap-6 animate-fade-up animate-duration-[700ms] animate-delay-700 animate-ease-in-out">
@@ -30,8 +27,8 @@ function HeroSection() {
         </div>
       </SectionExplain>
 
-      <div className="w-full animate-fade-left animate-duration-1000 animate-delay-500">
-        <img src="/images/home1.png" alt="hero" />
+      <div className="w-5/6 border shadow-lg shadow-primary-default border-primary-default animate-fade-left animate-duration-1000 animate-delay-500">
+        <img src="/programming/front-code.jpg" alt="hero" />
       </div>
     </Section>
   );
@@ -39,29 +36,19 @@ function HeroSection() {
 
 const services = [
   {
-    title: "Hot Desks",
-    desc: "Ideal for members who need a productive space to work.",
+    title: "Consultation",
+    desc: "Tell your problem to our professional experts",
     icon: "./icons/services1.png",
   },
   {
-    title: "Starter Spaces",
-    desc: "Ideal for members who need a productive space to work.",
+    title: "Articles",
+    desc: "We provide many interesting articles that you can read",
     icon: "./icons/services2.png",
   },
   {
-    title: "Coworking Spaces",
-    desc: "Ideal for members who need a productive space to work.",
+    title: "Plan Makers",
+    desc: "We help you plan your future for health in a digital world",
     icon: "./icons/services3.png",
-  },
-  {
-    title: "Virtual Office",
-    desc: "Ideal for members who need a productive space to work.",
-    icon: "./icons/services4.png",
-  },
-  {
-    title: "Meeting Room",
-    desc: "Ideal for members who need a productive space to work.",
-    icon: "./icons/services5.png",
   },
 ];
 
@@ -73,19 +60,19 @@ function OurServicesSection() {
           OUR SERVICES
         </SectionTag>
         <SectionHeading className="md:text-left text-center" >
-          Flexible Solutions for Your Business - Choose What Works Best for You
+          We Offer More Services For Your Digital Life
         </SectionHeading>
       </SectionExplain>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
         {services.map((service, i) => (
           <Card key={i} active={i === 1} >
-            <img src={service.icon} alt="icon" className="w-10"/>
+            <img src={service.icon} alt="icon" className="w-10" />
             <CardTitle>{service.title}</CardTitle>
             <CardDesc>{service.desc}</CardDesc>
             <div className="inline-flex gap-2 cursor-pointer group items-center">
               <p className="text-primary-default font-bold">Learn more</p>
-              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5"/>
+              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
             </div>
           </Card>
         ))}
@@ -96,32 +83,32 @@ function OurServicesSection() {
 
 const secsOne = [
   {
-    title: "Discover a busines location",
-    desc: "Our mission is to provide unparalleled value that increases over time. Our space is more than a shared office.",
+    title: "Build Your Big Community In Your Environment",
+    desc: "Our mission is to expand the awareness of digital warriors to pay more attention",
   },
   {
-    title: "The most efficient workspace solutions",
+    title: "The Productifity Digital Warriors",
   },
   {
-    title: "Design your productive space",
+    title: "Design Your Own Happy Life",
   },
 ];
 
 function SectionOne() {
   return (
-    <Section className="mt-4" row>
-      <div className="my-20">
+    <Section className="pb-10 md:mb-20" row>
+      <div className="my-0 md:my-20 ml-10 w-[40%]">
         <img
           data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100"
-          src="/images/home4.png"
+          src="/programming/vertical-code.jpg"
           alt="hero"
-          className="w-5/6 md:m-0 mx-auto "
+          className="md:m-0 border h-[600px] hidden md:block shadow-lg shadow-primary-default border-primary-default"
         />
       </div>
 
       <SectionExplain className="md:w-2/5 w-full">
         <SectionHeading className="md:text-left text-center">
-          A complete coworking space solution for your business and team
+          A Helpfull Services And Big Communities In The World
         </SectionHeading>
 
         <div className="grid gap-7 pt-10">
@@ -157,7 +144,7 @@ const whyServiced = [
 
 function WhyServicesSection() {
   return (
-    <Section className="mt-4 flex flex-col">
+    <Section className="pt-10 flex flex-col">
       <SectionExplain className="md:w-2/3 w-full">
         <SectionTag className="text-center">WHY SERVICED OFFICE</SectionTag>
         <SectionHeading className="text-center">
@@ -170,15 +157,15 @@ function WhyServicesSection() {
         </SectionDescription>
       </SectionExplain>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-7">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-7">
         {whyServiced.map((item, i) => (
           <Card data-aos="fade-left" data-aos-duration="500" data-aos-delay="300" key={i}>
-            <img src={item.image} alt="why" />
+            <img src={item.image} alt="why" className="w-full" />
             <CardTitle>{item.title}</CardTitle>
             <CardDesc>{item.desc}</CardDesc>
             <div className="inline-flex gap-2 cursor-pointer group items-center">
               <p className="text-primary-default font-bold">Learn more</p>
-              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5"/>
+              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
             </div>
           </Card>
         ))}
@@ -202,8 +189,8 @@ const locations = [
 function OurOfficeSection() {
   return (
     <Section className="mt-4 flex gap-x-28" row>
-      <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="md:w-1/2 w-full">
-        <img src="/images/home2.png" alt="hero" />
+      <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+        <img src="/images/home2.png" alt="hero" className="w-5/6" />
       </div>
       <SectionExplain className="md:w-1/2 w-full">
         <SectionTag>OUR OFFICES</SectionTag>
@@ -215,134 +202,30 @@ function OurOfficeSection() {
           experience remains exceptional.
         </SectionDescription>
 
-        <div className="space-y-5 py-10" data-aos-offset="0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+        <div className="space-y-5 py-10 text-primary-default" data-aos-offset="0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           {locations.map((location, i) => (
             <div key={i} className="flex items-center gap-5">
               <img className="w-10" src="./icons/map.png" alt="icon" />
-              <p className="font-bold text-lg text-[#2E3135]">
+              <p className="font-bold text-lg opacity-80">
                 {location.name}
               </p>
             </div>
           ))}
         </div>
-
-        <Button>View Locations</Button>
       </SectionExplain>
     </Section>
   );
 }
 
-const reviews = [
-  {
-    user: "Del Gibbs",
-    desc: "Futurspace is an excellent coworking space for my agency. It’s a great place to meet other business. owners expectations",
-    position: "VP, Globee Softech",
-    img: "./images/home-rev1.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-  {
-    user: "Britanny",
-    desc: "Quisque consectetur vulputate odio, non dictum metus porttitor molestie. Duis pharetra suscipit dolor, quis euismod velit fringilla sed.",
-    position: "Co-Founder & CTO - Payfi",
-    img: "./images/home-rev2.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-  {
-    user: "Randal Robertson",
-    desc: "Lorem ipsum dolor sit amet consectetur non adipiscing elit gravida posuere odio metus adipiscing tincidunt venenatis amet sagittis tellus porttitor enim blandit venenatis tellus.",
-    position: "Project lead at Zoole",
-    img: "./images/home-rev3.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-  {
-    user: "Randal Robertson",
-    desc: "Lorem ipsum dolor sit amet consectetur non adipiscing elit gravida posuere odio metus adipiscing tincidunt venenatis amet sagittis tellus porttitor enim blandit venenatis tellus.",
-    position: "Project lead at Zoole",
-    img: "./images/home-rev3.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-  {
-    user: "Randal Robertson",
-    desc: "Lorem ipsum dolor sit amet consectetur non adipiscing elit gravida posuere odio metus adipiscing tincidunt venenatis amet sagittis tellus porttitor enim blandit venenatis tellus.",
-    position: "Project lead at Zoole",
-    img: "./images/home-rev3.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-];
-
-function ReviewsSection() {
-  const sliderRef = React.useRef(null);
-
-  const handlePrev = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  };
-
-  const handleNext = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  };
-
-  return (
-    <div className="mb-32">
-      <Section row className="my-0">
-        <div className="gap-10">
-          <SectionExplain>
-            <SectionTag>REVIEWS</SectionTag>
-            <SectionHeading>What Our Members Say</SectionHeading>
-          </SectionExplain>
-        </div>
-        <div className="inline-flex gap-10" data-aos="flip-right" data-aos-duration="700" data-aos-delay="200">
-          <img
-            className="w-10 cursor-pointer md:block hidden hover:-translate-x-1 transition-all"
-            src="./icons/L-arrow.png"
-            alt="btn-prev"
-            onClick={handlePrev}
-          />
-          <img
-            className="w-10 cursor-pointer md:block hidden hover:translate-x-1 transition-all"
-            src="./icons/RB-arrow.png"
-            alt="btn-next"
-            onClick={handleNext}
-          />
-        </div>
-      </Section>
-      <SSwiper refs={sliderRef} initialSlide={2}>
-        {reviews.map((rev, i) => (
-          <SwiperSlide
-            data-aos="fade-left" data-aos-duration="700" data-aos-delay="200"
-            key={i}
-            className={rc(
-              "max-w-md p-8 space-y-5 rounded-2xl h-64 shadow-md"
-            )}
-          >
-            <h2>{rev.rating}</h2>
-            <CardDesc>{rev.desc}</CardDesc>
-            <div className="flex gap-3">
-              <div className="rounded-full">
-                <img className="w-10" src={rev.img} alt="user-img" />
-              </div>
-              <div>
-                <CardTitle>{rev.user}</CardTitle>
-                <CardDesc>{rev.position}</CardDesc>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </SSwiper>
-    </div>
-  );
-}
-
 function SectionTwo() {
   return (
-    <Section className="mt-4">
-      <div className="bg-[#F0F6FF] p-12 md:p-20 w-full rounded-3xl flex md:flex-row flex-col-reverse justify-between items-center">
+    <Section className="mt-20">
+      <div className="p-12 md:p-20 w-full rounded-3xl flex md:flex-row flex-col-reverse justify-between items-center">
         <div className="flex flex-col gap-6 md:w-3/4 md:mt-0 mt-4">
-          <SectionHeading className="text-xl">
-            Customised workspace for rent wherever you need it
+          <SectionHeading className="text-lg">
+            Call Our Teams For Free, We Response Your Call As Soon As Possible We Can
           </SectionHeading>
-          <Button className="w-fit">Book Tour</Button>
+          <Button className="w-fit">Try Now</Button>
         </div>
         <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
           <img src="/images/home3.png" alt="hero" />
@@ -352,50 +235,16 @@ function SectionTwo() {
   );
 }
 
-function SectionThree() {
-  return (
-    <Section className="mt-4 flex flex-col">
-      <SectionExplain className="md:w-5/6">
-        <SectionHeading className="text-center text-xl">
-          We enable people to work where they want, when they want and how they
-          want
-        </SectionHeading>
-        <SectionDescription className="text-center md:w-2/3 text-xs md:text-base">
-          We offer offices for lease by the day, by the week, or by the year.
-          Choose from any of our 3000 locations. Get a free quote!
-        </SectionDescription>
-      </SectionExplain>
-
-      <div className="">
-        <div className="rounded-full border border-gray-300 flex justify-between max-w-xl p-2.5 mx-auto ">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="focus:outline-none pl-4 w-full"
-          />
-          <Button>Submit</Button>
-        </div>
-
-        <p className="text-center mt-4 text-sm md:text-base italic opacity-50">
-          No worries, we don’t do spam!
-        </p>
-      </div>
-    </Section>
-  );
-}
-
 function MainPage() {
   return (
-    <>
+    <div>
       <HeroSection />
       <OurServicesSection />
       <SectionOne />
       <WhyServicesSection />
       <OurOfficeSection />
-      <ReviewsSection />
       <SectionTwo />
-      <SectionThree />
-    </>
+    </div>
   );
 }
 

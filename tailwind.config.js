@@ -14,6 +14,9 @@ export default withMT({
         primary: {
           default: "var(--primary)",
         },
+        background: {
+          default: "var(--background)",
+        },
         status: {
           success: "var(--status-success)",
           notava: "var(--status-notavailable)",

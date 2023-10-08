@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Button } from "../components/button";
 import {
   Section,
@@ -9,9 +8,6 @@ import {
   SectionExplain,
 } from "../components/section";
 import { Card, CardDesc, CardTitle } from "../components/card";
-import { SwiperSlide } from "swiper/react";
-import { SSwiper } from "../components/swiper";
-import { rc } from "../lib/utils";
 
 function HeroSection() {
   return (
@@ -81,7 +77,7 @@ function ServiceSection() {
             <CardDesc>{service.desc}</CardDesc>
             <div className="inline-flex gap-2 cursor-pointer group items-center">
               <p className="text-primary-default font-bold">Learn more</p>
-              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5"/>
+              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
             </div>
           </Card>
         ))}
@@ -111,94 +107,6 @@ function CtaSection() {
         </div>
       </div>
     </Section>
-  );
-}
-
-const reviews = [
-  {
-    user: "Del Gibbs",
-    desc: "Futurspace is an excellent coworking space for my agency. It’s a great place to meet other business. owners expectations",
-    position: "VP, Globee Softech",
-    img: "./images/home-rev1.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-  {
-    user: "Britanny",
-    desc: "Quisque consectetur vulputate odio, non dictum metus porttitor molestie. Duis pharetra suscipit dolor, quis euismod velit fringilla sed.",
-    position: "Co-Founder & CTO - Payfi",
-    img: "./images/home-rev2.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-  {
-    user: "Randal Robertson",
-    desc: "Lorem ipsum dolor sit amet consectetur non adipiscing elit gravida posuere odio metus adipiscing tincidunt venenatis amet sagittis tellus porttitor enim blandit venenatis tellus.",
-    position: "Project lead at Zoole",
-    img: "./images/home-rev3.png",
-    rating: "⭐ ⭐ ⭐ ⭐",
-  },
-];
-
-function ReviewsSection() {
-  const sliderRef = React.useRef(null);
-
-  const handlePrev = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  };
-
-  const handleNext = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  };
-  return (
-    <div className="mb-32">
-      <Section className="mb-0">
-        <div className="gap-10">
-          <SectionExplain>
-            <SectionTag>REVIEWS</SectionTag>
-            <SectionHeading>What Our Members Say</SectionHeading>
-          </SectionExplain>
-        </div>
-        <div className="inline-flex gap-10" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="200">
-          <img
-            className="w-10 cursor-pointer md:block hidden hover:-translate-x-1 transition-all"
-            src="./icons/L-arrow.png"
-            alt="btn-prev"
-            onClick={handlePrev}
-          />
-          <img
-            className="w-10 cursor-pointer md:block hidden hover:translate-x-1 transition-all"
-            src="./icons/RB-arrow.png"
-            alt="btn-next"
-            onClick={handleNext}
-          />
-        </div>
-      </Section>
-
-      <SSwiper refs={sliderRef} initialSlide={1}>
-        {reviews.map((rev, i) => (
-          <SwiperSlide
-          data-aos="fade-left" data-aos-duration="700" data-aos-delay="200"
-            key={i}
-            className={rc(
-              "max-w-md px-8 space-y-5 rounded-2xl h-64 shadow-md"
-            )}
-          >
-            <h2>{rev.rating}</h2>
-            <CardDesc>{rev.desc}</CardDesc>
-            <div className="flex gap-3">
-              <div className="rounded-full">
-                <img className="w-10" src={rev.img} alt="user-img" />
-              </div>
-              <div>
-                <CardTitle>{rev.user}</CardTitle>
-                <CardDesc>{rev.position}</CardDesc>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </SSwiper>
-    </div>
   );
 }
 
@@ -271,7 +179,6 @@ function SpacesPage() {
       <HeroSection />
       <ServiceSection />
       <CtaSection />
-      <ReviewsSection />
       <FeedbackSection />
       <ClientSection />
     </>

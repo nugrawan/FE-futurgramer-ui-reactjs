@@ -14,10 +14,10 @@ function SectionHeading({ className, children }) {
 function SectionDescription({ className, children, maxWidth }) {
   return (
     <div className="w-full">
-      <h1 
+      <h1
         data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"
         className={rc(
-          "md:text-lg text-base leading-6 text-[#000]/50 mx-auto text-left",
+          "md:text-sm text-base leading-6 opacity-90 mx-auto text-left",
           maxWidth && " max-w-5xl",
           className
         )}
@@ -30,7 +30,7 @@ function SectionDescription({ className, children, maxWidth }) {
 
 function SectionTag({ className, children }) {
   return (
-    <p  data-aos="fade-up" data-aos-duration="500" className={rc("text-primary-default font-bold", className)}>
+    <p data-aos="fade-up" data-aos-duration="500" className={rc("text-primary-default font-bold", className)}>
       {children}
     </p>
   );
@@ -44,7 +44,7 @@ function Section({ children, className, col, row }) {
   return (
     <section
       className={rc(
-        "flex justify-between cont gap-16 mb-24 md:mb-32 items-center",
+        "flex justify-between cont gap-16 mb-24 md:mb-32 items-center text-white",
         className,
         col && "md:flex-col flex-col",
         row && "md:flex-row flex-col"
