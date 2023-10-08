@@ -1,6 +1,4 @@
 import React from "react";
-import { MainPage, WhyServicesSection } from "./index";
-
 import { Button } from "../components/button";
 import {
   Section,
@@ -14,42 +12,134 @@ import { rc } from "../lib/utils";
 
 function HeroPage() {
   return (
-    <Section className="flex-col mb-10">
-      <SectionExplain className="flex justify-between items-center md:flex-row flex-col">
-        <SectionHeading className="md:w-[40%] md:text-left text-center text-2xl animate-fade-right animate-duration-[500ms] animate-delay-300 animate-ease-in">
-          About our company
+    <Section className="flex flex-col md:flex-row justify-between w-full pt-10  mb-10">
+      <SectionExplain className="flex flex-col gap-5  flex-1">
+        <SectionHeading className="animate-fade-right animate-duration-[500ms] animate-delay-300 animate-ease-in">
+          About Our Company
         </SectionHeading>
-        <SectionDescription className="text-white leading-7 mx-0 text-xs md:text-lg opacity-80 font-thin md:text-left text-center animate-fade-left animate-duration-[500ms] animate-delay-500 animate-ease-in">
-          Our space is more than a shared office. It is a meeting ground for
-          creatives and teams <br />
-          <br /> Find focus and clarity space to do the things you need to do to
-          grow your business in New York. Book by the month, daily or by the
-          hour.
+        <SectionDescription className="text-white leading-7 md:text-lg opacity-80 font-thin md:text-left animate-fade-left animate-duration-[500ms] animate-delay-500 animate-ease-in">
+          Kami Hadir sebagai media penyedia layanan kesehatan para pekerja digital, khususnya programmer di suluruh dunia untuk mengatasi masalah kesehatan yang semakin melonjak di zaman teknologi ini, dengan majunya teknologi yang membuat penyakit seperti mental illnes dan obesitas semakin melonjak
         </SectionDescription>
       </SectionExplain>
 
-      <div className="animate-fade-up animate-duration-[300ms] animate-delay-100 animate-ease-in">
-        <img src="./images/about1.png" alt="" />
+      <div className="animate-fade-up animate-duration-[300ms] flex-1 rounded-3xl animate-delay-100 animate-ease-in">
+        <img src="./programming/coding-vector.jpg" alt="hero" className="rounded-3xl md:w-5/6 w-full" />
       </div>
+    </Section >
+  );
+}
+
+const whyServiced = [
+  {
+    title: "Working Spaces",
+    image: "/images/home-why1.png",
+    desc: "Nikmati ruang yang nyaman dan tanpa distrupsi untuk bekerja dengan fokus dan produktif.",
+  },
+  {
+    title: "Coworking Space",
+    image: "/images/home-why2.png",
+    desc: "Berinteraksi secara langsung dengan para pakar professional kami dan bekerja secara sehat.",
+  },
+  {
+    title: "Meeting Space",
+    image: "/images/home-why3.png",
+    desc: "Ikuti pertemuan rutin dan diskusikan perkembangan kalian secara konsisten.",
+  },
+];
+
+function WhyServicesSection() {
+  return (
+    <Section className="pt-10 flex flex-col">
+      <SectionExplain className="md:w-2/3 w-full">
+        <SectionTag className="text-center">OUR ACTIVITIES</SectionTag>
+        <SectionHeading className="text-center">
+          Kami Juga Membantu Ribuan Programmer Menangani Masalah Mereka Secara Langsung Dengan Beragam Fasilitas
+        </SectionHeading>
+        <SectionDescription className="text-center">
+          Cukup dengan langganan dengan harga terjangkau, kami akan memfasilitasi para programmer dan pekerja digital lainnya lengkap dengan layanan dari para tenaga professional yang menangani secara langsung
+        </SectionDescription>
+      </SectionExplain>
+
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-7">
+        {whyServiced.map((item, i) => (
+          <Card data-aos="fade-left" data-aos-duration="500" data-aos-delay="300" key={i}>
+            <img src={item.image} alt="why" className="w-full" />
+            <CardTitle>{item.title}</CardTitle>
+            <CardDesc>{item.desc}</CardDesc>
+            <div className="inline-flex gap-2 cursor-pointer group items-center">
+              <p className="text-primary-default font-bold">Learn more</p>
+              <img src="./icons/arrow-right-short.svg" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
+            </div>
+          </Card>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+const locations = [
+  {
+    name: "Jakarta, Indonesia",
+  },
+  {
+    name: "Makassar, Indonesia",
+  },
+  {
+    name: "Surabaya, Indonesia",
+  },
+  {
+    name: "Mumbai, India",
+  },
+  {
+    name: "San Francisco, USA",
+  },
+];
+
+function OurOfficeSection() {
+  return (
+    <Section className="mt-4 flex gap-x-28" row>
+      <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+        <img src="/images/home2.png" alt="hero" className="w-5/6" />
+      </div>
+      <SectionExplain className="md:w-1/2 w-full">
+        <SectionTag>OUR OFFICES</SectionTag>
+        <SectionHeading>
+          Temukan kantor kami dan bergabung menjadi bagian dari kami
+        </SectionHeading>
+        <SectionDescription>
+          Kami telah membangun beberapa kantor yang terbagi di beberapa bagian, dan dengan pembangunan kantor yang terus berlanjut dan menyeluruh.
+        </SectionDescription>
+
+        <div className="space-y-5 py-10 text-white" data-aos-offset="0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+          {locations.map((location, i) => (
+            <div key={i} className="flex items-center gap-5">
+              <img className="w-10 bg-primary-default rounded-full p-3" src="./icons/geo-alt.svg" alt="icon" />
+              <p className="font-bold text-lg opacity-80">
+                {location.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionExplain>
     </Section>
   );
 }
 
 const datas = [
   {
-    dataInt: "3000+",
-    title: "Happy Members",
-    desc: "We offer offices for lease by the day, by the week, or by the year.",
+    dataInt: "300+",
+    title: "Communities",
+    desc: "Kami mengontrol ratusan komunitas di seluruh penjuru dunia",
   },
   {
-    dataInt: "12+",
-    title: "Locations across the globe",
-    desc: "We offer offices for lease by the day, by the week, or by the year.",
+    dataInt: "5+",
+    title: "Offices",
+    desc: "Kami membangun kantor yang nyaman di berbagai bagian",
   },
   {
-    dataInt: "10+",
+    dataInt: "3+",
     title: "Years Of Service",
-    desc: "We offer offices for lease by the day, by the week, or by the year.",
+    desc: "Kami telah berpengalaman selama lebih dari tiga tahun dalam menangani kasus yang sama",
   },
 ];
 
@@ -58,12 +148,10 @@ function DataSection() {
     <Section className="flex-col">
       <SectionExplain>
         <SectionHeading className="text-xl md:text-2xl">
-          Our space is more than a shared office. It is a meeting ground for
-          creatives and teams
+          Kami Lebih Dari Sebuah Perusahaan Yang Diketahui Masyarakat Luas
         </SectionHeading>
         <SectionDescription className="mx-0 text-xs md:text-base">
-          Find focus and clarity space to do the things you need to do to grow
-          your business in New York. Book by the month, daily or by the hour.
+          Temukan sarana yang cocok untuk anda dan adilah bagia dari kami
         </SectionDescription>
       </SectionExplain>
 
@@ -114,12 +202,10 @@ function LeadershipSection() {
       <SectionExplain className="md:w-[60%] w-[90%] mx-auto">
         <SectionTag className="text-center text-xs md:text-base">OUR LEADERSHIP TEAM</SectionTag>
         <SectionHeading className="text-center text-2xl ">
-          Meet the great team behind Futurgramer
+          Berkenalan Dengan Para Pakar Kami
         </SectionHeading>
         <SectionDescription className="text-center text-xs md:text-base">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sapien
-          vestibulum quam massa viverra blandit sit auctor vestibulum semper
-          viverra aliquet sit.
+          Terdiri dari puluhan tenaga profesional di bidangnya yang berpengalaman lebih dari 3 tahun
         </SectionDescription>
       </SectionExplain>
 
@@ -151,57 +237,19 @@ function LeadershipSection() {
 function JoinTeamSection() {
   return (
     <Section row>
-      <div className="bg-[#0190fe11] flex md:flex-row flex-col md:p-20 p-10 items-baseline rounded-3xl">
+      <div className="bg-[#0190fe11] mx-auto flex md:flex-row flex-col md:p-20 p-10 items-baseline rounded-3xl">
         <SectionHeading className="md:w-[40%] mx-0 text-xl md:text-4xl">
           Join our team
         </SectionHeading>
-        <SectionExplain className="md:w-[60%] w-full md:mt-0 mt-12">
+        <SectionExplain className="md:w-[60%] w-full md:mt-0 mt-5">
           <SectionDescription className="text-xs md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sapien eget
-            eu elementum velit nunc tortor pulvinar ornare at mi sed nisl in
-            proin sollicitudin ultricies aliquet malesuada aliquet.
+            Bergabung dengan kami di sosial media untuk mendapatkan informasi terupdate dan paling populer
           </SectionDescription>
-          <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="500" className="inline-flex gap-2 cursor-pointer group items-center text-xs md:text-base">
-            <p className="text-primary-default font-bold">Explore Jobs</p>
-            <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
+          <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="500" className="inline-flex gap-2 cursor-pointer group items-center text-xl md:text-base">
+            <p className="text-primary-default font-bold">Explore Social Media</p>
+            <img src="/icons/arrow-right-short.svg" alt="icon" className="transition-transform group-hover:translate-x-2" />
           </div>
         </SectionExplain>
-      </div>
-    </Section>
-  );
-}
-
-function ClientSection() {
-  return (
-    <div className="cont text-center p-5 md:p-10 md:px-20 mb-20">
-      <p className="opacity-60 font-bold mb-5">
-        Trusted by top companies and startups around the world
-      </p>
-      <div>
-        <img src="./images/about-company.png" alt="partners" />
-      </div>
-    </div>
-  );
-}
-
-function CtaSection() {
-  return (
-    <Section className="">
-      <div className="md:p-20 p-10 bg-[#0190fe11] rounded-3xl gap-20 flex md:flex-row flex-col-reverse">
-        <SectionExplain className="md:w-[60%]">
-          <SectionHeading className="text-xl">
-            We have all the amenities you need to grow your business starting on
-            day one
-          </SectionHeading>
-          <SectionDescription className="text-xs md:text-base">
-            We strive to create a professional and welcoming environment in
-            order to foster collaboration, creativity, and productivity.
-          </SectionDescription>
-          <Button>Get Started</Button>
-        </SectionExplain>
-        <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-          <img src="./images/space2.png" alt="cta-img" />
-        </div>
       </div>
     </Section>
   );
@@ -212,16 +260,15 @@ function SubscribeSection() {
     <Section className="mt-4 flex flex-col">
       <SectionExplain>
         <SectionHeading className="text-center">
-          Modern workspaces that fits your needs
+          Send Your Email For Subscription
         </SectionHeading>
         <SectionDescription className="text-center">
-          No subscriptions or lousy monthly fees. Only pay for the space and
-          time you need
+          Kami akan memberikan penawaran menarik di email dengan cerita yang menarik
         </SectionDescription>
       </SectionExplain>
 
       <div className="w-full">
-        <div className="rounded-full border md:w-[40%] border-gray-300 flex justify-between p-2 mx-auto">
+        <div className="rounded-full border font-semibold md:w-[40%] text-black bg-white flex justify-between p-2 mx-auto">
           <input
             type="email"
             placeholder="Enter your email"
@@ -244,12 +291,11 @@ function AboutPage() {
       <div className="bg-primary-default text-white pb-1 mb-32">
         <HeroPage />
       </div>
-      <DataSection />
       <WhyServicesSection />
+      <OurOfficeSection />
+      <DataSection />
       <LeadershipSection />
       <JoinTeamSection />
-      <ClientSection />
-      <CtaSection />
       <SubscribeSection />
     </>
   );

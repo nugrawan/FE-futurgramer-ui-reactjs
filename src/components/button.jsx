@@ -3,14 +3,14 @@ import { cva } from "class-variance-authority";
 
 import { rc } from "@/lib/utils";
 
-const buttonVariants = cva("rounded-3xl font-semibold sm:text-base text-sm", {
+const buttonVariants = cva("rounded-full font-semibold sm:text-base", {
   variants: {
     variant: {
       default: "hover:opacity-80 bg-primary-default text-white",
       secondary: "bg-white text-primary-default border border-primary-default hover:bg-gray-100",
     },
     size: {
-      default: "px-7 py-3",
+      default: "px-5 py-2 text-sm",
     },
   },
   defaultVariants: {

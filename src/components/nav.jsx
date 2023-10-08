@@ -46,7 +46,7 @@ function NavItems({ blue }) {
         <div
           key={i}
           className={rc(
-            "opacity-80 text-primary-default hover:opacity-100 cursor-pointer",
+            "text-white hover:opacity-90 cursor-pointer",
             blue && "text-white"
           )}
           onClick={() => navigate(item.path)}
@@ -130,7 +130,7 @@ function Navbar() {
   const pathname = useLocation().pathname;
   const blue = pathname === "/about";
   return (
-    <div className={rc("w-full border-b border-primary-default bg-background-default", blue && "bg-primary-default")}>
+    <div className={rc("w-full  border-b border-primary-default bg-background-default", blue && "bg-primary-default border-white")}>
       <div
         className={rc(
           "w-full flex justify-between items-center p-5 mx-auto px-6 cont"

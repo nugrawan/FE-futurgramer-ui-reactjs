@@ -17,18 +17,17 @@ function HeroSection() {
           Happy Life With Coding
         </SectionHeading>
         <SectionDescription className="animate-fade-up text-white animate-duration-[500ms] animate-delay-500 animate-ease-in">
-          Care about your mental health and your body, don't just coding and sit down in your room
-          We serve you our best services for your health and your happy life, enjoy our services and stay coding
+          Peduli dengan kesehatan mental dan tubuhmu sebagai programmer, jangan hanya duduk di depan layar setiap hari
         </SectionDescription>
 
         <div className="flex gap-6 animate-fade-up animate-duration-[700ms] animate-delay-700 animate-ease-in-out">
-          <Button>Discover Now</Button>
-          <Button variant="secondary">Book a tour</Button>
+          <Button>Get Started</Button>
+          <Button>Find Features</Button>
         </div>
       </SectionExplain>
 
-      <div className="w-5/6 border shadow-lg shadow-primary-default border-primary-default animate-fade-left animate-duration-1000 animate-delay-500">
-        <img src="/programming/front-code.jpg" alt="hero" />
+      <div className="w-5/6 border-2 border-[#00DFC0] animate-fade-left rounded-xl animate-duration-1000 animate-delay-500">
+        <img src="/programming/front-code.jpg" alt="hero" className="img-shadow rounded-xl" />
       </div>
     </Section>
   );
@@ -37,18 +36,18 @@ function HeroSection() {
 const services = [
   {
     title: "Consultation",
-    desc: "Tell your problem to our professional experts",
-    icon: "./icons/services1.png",
+    desc: "Ceritakan masalah kesehatanmu kepada para ahli di bidangnya",
+    icon: "./icons/heart-pulse.svg",
   },
   {
     title: "Articles",
-    desc: "We provide many interesting articles that you can read",
-    icon: "./icons/services2.png",
+    desc: "Kami menyediakan artikel menarik khusus untuk para pejuang digital dalam menjaga kesehatannya",
+    icon: "./icons/newspaper.svg",
   },
   {
     title: "Plan Makers",
-    desc: "We help you plan your future for health in a digital world",
-    icon: "./icons/services3.png",
+    desc: "Kami membantu para programmer muda dalam membuat rencana masa depan sehat sebagai programmer",
+    icon: "./icons/book.svg",
   },
 ];
 
@@ -60,19 +59,19 @@ function OurServicesSection() {
           OUR SERVICES
         </SectionTag>
         <SectionHeading className="md:text-left text-center" >
-          We Offer More Services For Your Digital Life
+          Kami Menyediakan Layanan Untuk Membantu Kehidupan Digital Anda
         </SectionHeading>
       </SectionExplain>
 
       <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
         {services.map((service, i) => (
           <Card key={i} active={i === 1} >
-            <img src={service.icon} alt="icon" className="w-10" />
+            <img src={service.icon} alt="icon" className="w-10 bg-primary-default p-2 rounded-md" />
             <CardTitle>{service.title}</CardTitle>
             <CardDesc>{service.desc}</CardDesc>
             <div className="inline-flex gap-2 cursor-pointer group items-center">
-              <p className="text-primary-default font-bold">Learn more</p>
-              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
+              <p className="text-primary-default font-bold">Get started</p>
+              <img src="./icons/arrow-right-short.svg" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
             </div>
           </Card>
         ))}
@@ -83,32 +82,32 @@ function OurServicesSection() {
 
 const secsOne = [
   {
-    title: "Build Your Big Community In Your Environment",
-    desc: "Our mission is to expand the awareness of digital warriors to pay more attention",
+    title: "Bangun komunitasmu sendiri mulai dari lingkungan sekitar",
+    desc: "Misi kami adalah membantu anda dan programmer lain dalam menyadari pentingnya komunitas yang positif",
   },
   {
-    title: "The Productifity Digital Warriors",
+    title: "Belajar Bagaimana Mengontrol Waktumu Di Dunia Digital",
   },
   {
-    title: "Design Your Own Happy Life",
+    title: "Desain Dan Bangun Kehidupan Yang Menyenangkan Di Dunia Digital",
   },
 ];
 
 function SectionOne() {
   return (
     <Section className="pb-10 md:mb-20" row>
-      <div className="my-0 md:my-20 ml-10 w-[40%]">
+      <div className="my-0 md:my-20 ml-10 w-[80%]">
         <img
           data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100"
-          src="/programming/vertical-code.jpg"
+          src="/programming/group-hacking.jpg"
           alt="hero"
-          className="md:m-0 border h-[600px] hidden md:block shadow-lg shadow-primary-default border-primary-default"
+          className="md:m-0 border-[#00DFC0] border-2 rounded-lg md:block img-shadow"
         />
       </div>
 
       <SectionExplain className="md:w-2/5 w-full">
         <SectionHeading className="md:text-left text-center">
-          A Helpfull Services And Big Communities In The World
+          Bangun Komunitas Programmer Health Di Seluruh Penjuru Dunia
         </SectionHeading>
 
         <div className="grid gap-7 pt-10">
@@ -124,108 +123,15 @@ function SectionOne() {
   );
 }
 
-const whyServiced = [
-  {
-    title: "Office Space",
-    image: "/images/home-why1.png",
-    desc: "Informal drop-in meeting spaces with secure WiFi, access to a printer, scanner and photocopier.",
-  },
-  {
-    title: "Coworking Space",
-    image: "/images/home-why2.png",
-    desc: "Informal drop-in meeting spaces with secure WiFi, access to a printer, scanner and photocopier.",
-  },
-  {
-    title: "Meeting Space",
-    image: "/images/home-why3.png",
-    desc: "Informal drop-in meeting spaces with secure WiFi, access to a printer, scanner and photocopier.",
-  },
-];
-
-function WhyServicesSection() {
-  return (
-    <Section className="pt-10 flex flex-col">
-      <SectionExplain className="md:w-2/3 w-full">
-        <SectionTag className="text-center">WHY SERVICED OFFICE</SectionTag>
-        <SectionHeading className="text-center">
-          We've helped thousands of fast-growing startups and teams
-        </SectionHeading>
-        <SectionDescription className="text-center">
-          Grow without restriction. By giving you space that can be changed as
-          your business grows. Only pay for the space you use with everything
-          you need to be included in one price.
-        </SectionDescription>
-      </SectionExplain>
-
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-7">
-        {whyServiced.map((item, i) => (
-          <Card data-aos="fade-left" data-aos-duration="500" data-aos-delay="300" key={i}>
-            <img src={item.image} alt="why" className="w-full" />
-            <CardTitle>{item.title}</CardTitle>
-            <CardDesc>{item.desc}</CardDesc>
-            <div className="inline-flex gap-2 cursor-pointer group items-center">
-              <p className="text-primary-default font-bold">Learn more</p>
-              <img src="./icons/r-arrow.png" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
-            </div>
-          </Card>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-const locations = [
-  {
-    name: "New Orleans, USA",
-  },
-  {
-    name: "Bangalore, India",
-  },
-  {
-    name: "Sydney, Australia ",
-  },
-];
-
-function OurOfficeSection() {
-  return (
-    <Section className="mt-4 flex gap-x-28" row>
-      <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-        <img src="/images/home2.png" alt="hero" className="w-5/6" />
-      </div>
-      <SectionExplain className="md:w-1/2 w-full">
-        <SectionTag>OUR OFFICES</SectionTag>
-        <SectionHeading>
-          Discover the Location that Best Fits Your Business Needs
-        </SectionHeading>
-        <SectionDescription>
-          As we headstart into this new normal, we are ensuring your workspace
-          experience remains exceptional.
-        </SectionDescription>
-
-        <div className="space-y-5 py-10 text-primary-default" data-aos-offset="0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
-          {locations.map((location, i) => (
-            <div key={i} className="flex items-center gap-5">
-              <img className="w-10" src="./icons/map.png" alt="icon" />
-              <p className="font-bold text-lg opacity-80">
-                {location.name}
-              </p>
-            </div>
-          ))}
-        </div>
-      </SectionExplain>
-    </Section>
-  );
-}
-
 function SectionTwo() {
   return (
     <Section className="mt-20">
-      <div className="p-12 md:p-20 w-full rounded-3xl flex md:flex-row flex-col-reverse justify-between items-center">
-        <div className="flex flex-col gap-6 md:w-3/4 md:mt-0 mt-4">
+      <div className="p-12 md:p-20 rounded-lg def-shadow flex md:flex-row flex-col-reverse justify-between items-center">
+        <div className="flex flex-col gap-10 md:w-3/4 md:mt-0 mt-4">
           <SectionHeading className="text-lg">
-            Call Our Teams For Free, We Response Your Call As Soon As Possible We Can
+            Hubungi Tim Kami Untuk Informasi Dan Masalah Yang Perlu Disampaikan
           </SectionHeading>
-          <Button className="w-fit">Try Now</Button>
+          <Button className="w-fit">Get Started</Button>
         </div>
         <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
           <img src="/images/home3.png" alt="hero" />
@@ -241,11 +147,9 @@ function MainPage() {
       <HeroSection />
       <OurServicesSection />
       <SectionOne />
-      <WhyServicesSection />
-      <OurOfficeSection />
       <SectionTwo />
     </div>
   );
 }
 
-export { MainPage, WhyServicesSection };
+export { MainPage };

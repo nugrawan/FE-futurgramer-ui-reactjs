@@ -47,30 +47,38 @@
   }
 
   .def-shadow {
-    box-shadow: 2px 2px 1px 1px #00DFC0;
+    -webkit-box-shadow: 0px 1px 0px 2px rgba(0, 223, 192, 0.88);
+    -moz-box-shadow: 0px 1px 0px 2px rgba(0, 223, 192, 0.88);
+    box-shadow: 0px 1px 0px 2px rgba(0, 223, 192, 0.88);
   }
-}
 
-@layer components {
-  .cont {
-    @apply max-w-7xl px-6 mx-auto;
+  .img-shadow {
+    -webkit-box-shadow: 18px 17px 300px -15px rgba(0, 223, 192, 0.6);
+    -moz-box-shadow: 18px 17px 300px -15px rgba(0, 223, 192, 0.6);
+    box-shadow: 18px 17px 300px -15px rgba(0, 223, 192, 0.6);
   }
-}
 
-@layer utilities {
-  @variants responsive {
-
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
+  @layer components {
+    .cont {
+      @apply max-w-7xl px-6 mx-auto;
     }
+  }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      /* IE and Edge */
-      scrollbar-width: none;
-      /* Firefox */
+  @layer utilities {
+    @variants responsive {
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+      }
     }
   }
 }

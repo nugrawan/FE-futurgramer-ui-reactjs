@@ -67,10 +67,12 @@ const footItems = [
 ];
 
 const icons = [
-  { icon: "./icons/facebook.png" },
-  { icon: "./icons/linkidn.png" },
-  { icon: "./icons/instagram.png" },
-  { icon: "./icons/twitter.png" },
+  { icon: "./icons/facebook.svg" },
+  { icon: "./icons/linkedin.svg" },
+  { icon: "./icons/instagram.svg" },
+  { icon: "./icons/twitter-x.svg" },
+  { icon: "./icons/whatsapp.svg" },
+  { icon: "./icons/envelope.svg" },
 ];
 
 export function Footer() {
@@ -85,7 +87,7 @@ export function Footer() {
           </p>
           <div className="flex gap-5 my-10">
             {icons.map((icon, i) => (
-              <img key={i} className="h-5" src={icon.icon} alt="icon" />
+              <img key={i} className="h-7 rounded-md bg-primary-default p-1" src={icon.icon} alt="icon" />
             ))}
           </div>
         </div>
