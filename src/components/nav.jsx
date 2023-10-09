@@ -29,8 +29,8 @@ const navItemList = [
     path: "/about",
   },
   {
-    name: "Spaces",
-    path: "/spaces",
+    name: "Articles",
+    path: "/articles",
   },
   {
     name: "Contact us",

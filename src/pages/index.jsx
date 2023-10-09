@@ -21,8 +21,8 @@ function HeroSection() {
         </SectionDescription>
 
         <div className="flex gap-6 animate-fade-up animate-duration-[700ms] animate-delay-700 animate-ease-in-out">
-          <Button>Get Started</Button>
-          <Button>Find Features</Button>
+          <a href="/articles"><Button>Read Articles</Button></a>
+          <a href="/contact-us"><Button>Contact Us</Button></a>
         </div>
       </SectionExplain>
 
@@ -38,16 +38,19 @@ const services = [
     title: "Consultation",
     desc: "Ceritakan masalah kesehatanmu kepada para ahli di bidangnya",
     icon: "./icons/heart-pulse.svg",
+    to: '/contact-us'
   },
   {
     title: "Articles",
     desc: "Kami menyediakan artikel menarik khusus untuk para pejuang digital dalam menjaga kesehatannya",
     icon: "./icons/newspaper.svg",
+    to: '/articles'
   },
   {
     title: "Plan Makers",
     desc: "Kami membantu para programmer muda dalam membuat rencana masa depan sehat sebagai programmer",
     icon: "./icons/book.svg",
+    to: '/contact-us'
   },
 ];
 
@@ -69,10 +72,10 @@ function OurServicesSection() {
             <img src={service.icon} alt="icon" className="w-10 bg-primary-default p-2 rounded-md" />
             <CardTitle>{service.title}</CardTitle>
             <CardDesc>{service.desc}</CardDesc>
-            <div className="inline-flex gap-2 cursor-pointer group items-center">
+            <a href={service.to} className="inline-flex gap-2 cursor-pointer group items-center">
               <p className="text-primary-default font-bold">Get started</p>
               <img src="./icons/arrow-right-short.svg" alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
-            </div>
+            </a>
           </Card>
         ))}
       </div>
@@ -131,10 +134,10 @@ function SectionTwo() {
           <SectionHeading className="text-lg">
             Hubungi Tim Kami Untuk Informasi Dan Masalah Yang Perlu Disampaikan
           </SectionHeading>
-          <Button className="w-fit">Get Started</Button>
+          <a href="tel:12345"><Button className="w-fit">Call Now</Button></a>
         </div>
         <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-          <img src="/images/home3.png" alt="hero" />
+          <img src="/images/home3.png" alt="hero" className="img-shadow" />
         </div>
       </div>
     </Section>

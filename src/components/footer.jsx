@@ -87,7 +87,7 @@ export function Footer() {
           </p>
           <div className="flex gap-5 my-10">
             {icons.map((icon, i) => (
-              <img key={i} className="h-7 rounded-md bg-primary-default p-1" src={icon.icon} alt="icon" />
+              <a href="#" key={i}><img className="h-7 rounded-md bg-primary-default p-1" src={icon.icon} alt="icon" /></a>
             ))}
           </div>
         </div>
@@ -133,8 +133,8 @@ export function FooterMobile() {
           <a href="/office">
             Offices
           </a>
-          <a href="/spaces">
-            Spaces
+          <a href="/articles">
+            Articles
           </a>
           <a href="/contact-us">
             Contact

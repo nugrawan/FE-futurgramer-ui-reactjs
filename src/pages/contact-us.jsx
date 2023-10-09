@@ -37,16 +37,20 @@ const contacts = [
     title: "Headquarters",
     desc: "Makassar city, Sulawesi Selatan",
     link: "Open in map",
+    to: 'https://www.google.com/maps/place/Makassar,+Kota+Makassar,+Sulawesi+Selatan/@-5.1111265,119.2378109,11z/data=!3m1!4b1!4m6!3m5!1s0x2dbee329d96c4671:0x3030bfbcaf770b0!8m2!3d-5.1615828!4d119.4359281!16zL20vMDIyaDQ3?entry=ttu'
+    
   },
   {
     title: "Call Us Now",
-    desc: "+6282292914643",
+    desc: "+6282292914643 (NUGRAWAN)",
     link: "Call now",
+    to: 'tel:6282292914643'
   },
   {
     title: "Costumer Service",
     desc: "Our friendly team is here to help.",
     link: "Email Us",
+    to: 'mailto:nugrawanpratama203@gmail.com'
   },
 ];
 
@@ -58,10 +62,10 @@ function ContactSection() {
           <Card key={i} className="md:w-[80%]">
             <CardTitle>{contact.title}</CardTitle>
             <CardDesc>{contact.desc}</CardDesc>
-            <div className="inline-flex gap-2 cursor-pointer group items-center">
+            <a href={contact.to} target="blank" className="inline-flex gap-2 cursor-pointer group items-center">
               <p className="text-primary-default font-bold">{contact.link}</p>
               <img src='/icons/arrow-right-short.svg' alt="icon" className="transition-transform group-hover:translate-x-2 w-5 h-5" />
-            </div>
+            </a>
           </Card>
         ))}
       </div>
@@ -72,7 +76,7 @@ function ContactSection() {
 function CtaSection() {
   return (
     <Section>
-      <div className="flex md:flex-row flex-col rounded-3xl md:gap-20 gap-10 bg-[#0190fe11] p-10">
+      <div className="flex md:flex-row flex-col rounded-3xl md:gap-20 gap-10 my-10 bg-[#0190fe11] p-10">
         <div data-aos-offset="0" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
           <img src="./images/contact1.png" alt="CTA" />
         </div>
@@ -83,8 +87,8 @@ function CtaSection() {
             Kami menyediakan layanan untuk mendengarkan keluhan dan kritikan terkai product kami
           </SectionDescription>
           <div className="flex gap-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <Button className="px-5 text-[.7em]">Call Us Now</Button>
-            <Button className="px-5 text-[.7em]" variant="secondary">More Details</Button>
+            <a href="tel:6282292914643"><Button className="px-5 text-[.7em]">Call Us Now</Button></a>
+            <a href="sms:6282292914643?body=TEXT"><Button className="px-5 text-[.7em]">Via SMS</Button></a>
           </div>
         </SectionExplain>
       </div>
@@ -94,7 +98,7 @@ function CtaSection() {
 
 function FormSection() {
   return (
-    <Section className="flex-col items-start w-full px-20 lg:w-[50%]">
+    <Section className="flex-col items-start w-full px-20 lg:w-[40%] p-10 mt-10 rounded-xl bg-[#0190fe11] img-shadow">
       <SectionExplain className="m-auto">
         <SectionHeading className="text-center">
           Kritik Dan Saran
@@ -104,16 +108,16 @@ function FormSection() {
         </SectionDescription>
       </SectionExplain>
       <div className="md:px-10 w-full">
-        <form action="" className="flex gap-10 flex-col text-xs md:text-base">
+        <form action="" className="flex gap-10 flex-col text-xs text-black md:text-base ">
           <input
-            className="px-8 py-4 w-full border rounded-full focus:outline-primary-default caret-primary-default"
+            className="px-8 py-4 w-full border rounded-full focus:outline-black caret-black"
             type="text"
             name="firstName"
             id="fistName"
             placeholder="First Name"
           />
           <input
-            className="px-8 py-4 w-full border rounded-full focus:outline-primary-default caret-primary-default"
+            className="px-8 py-4 w-full border rounded-full focus:outline-black caret-black"
             type="text"
             name="lastName"
             id="lastName"
@@ -121,7 +125,7 @@ function FormSection() {
           />
           <div className="flex gap-10">
             <input
-              className="px-8 py-4 w-full border rounded-full focus:outline-primary-default caret-primary-default"
+              className="px-8 py-4 w-full border rounded-full focus:outline-black caret-black"
               type="email"
               name="email"
               id="email"
@@ -129,23 +133,13 @@ function FormSection() {
             />
           </div>
           <textarea
-            className="px-8 py-4 w-full border rounded-full focus:outline-primary-default caret-primary-default"
+            className="px-8 py-4 w-full border rounded-full focus:outline-black caret-black"
             type="text"
             name="message"
             rows={3}
             id="message"
             placeholder="Message"
           ></textarea>
-
-          <label className="flex gap-3 text-[.7em] md:text-sm opacity-80">
-            <input
-              className="accent-[#C0C0C0]"
-              type="checkbox"
-              name="checkbox"
-              id="checkbox"
-            />
-            By clicking the below button you agree to our Terms of Service.
-          </label>
           <Button>Submit</Button>
         </form>
       </div>
