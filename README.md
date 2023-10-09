@@ -1,4 +1,4 @@
-# Futurgramer - The co-working Landing Page
+# Futurgramer - Future for programmers
 
-Landing Page created using Vite + React, and Tailwind CSS.
+Web articles created using Vite + React, and Tailwind CSS.
 
